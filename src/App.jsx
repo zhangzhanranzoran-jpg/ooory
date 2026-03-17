@@ -54,6 +54,33 @@ const products = [
   },
 ];
 
+const petProducts = [
+  {
+    id: "pet-chicken-cube",
+    title: "Freeze-Dried Chicken Cubes",
+    zh: "宠物冻干鸡肉粒",
+    tag: "高蛋白 · 单一肉源",
+    desc: "精选鸡胸肉低温冻干，还原真实肉香，帮助控制体重同时保留适口性。",
+    specs: ["100% 鸡肉", "不添加谷物、防腐剂", "适合犬猫日常零食"],
+  },
+  {
+    id: "pet-salmon-bite",
+    title: "Freeze-Dried Salmon Bites",
+    zh: "宠物冻干三文鱼块",
+    tag: "Omega-3 皮毛亮泽",
+    desc: "深海三文鱼整块冻干，富含优质脂肪酸，适合需要皮毛护理的宠物。",
+    specs: ["丰富 Omega-3", "适口性强", "可泡水还原拌粮"],
+  },
+  {
+    id: "pet-mixed-train",
+    title: "Training Mix Variety",
+    zh: "宠物训练冻干组合",
+    tag: "训练奖励 · 小颗粒",
+    desc: "鸡肉、鸭肉等多种口味小颗粒组合，方便训练时快速奖励。",
+    specs: ["多种口味组合", "小颗粒设计", "适合作为训练奖励"],
+  },
+];
+
 const faqs = [
   [
     "Do you ship internationally?",
@@ -249,6 +276,40 @@ function HomePage({ onAdd }) {
       <PageShell eyebrow="BEST SELLERS" title="Customer Favorites" description="A clean homepage section that leads directly into product clicks and add-to-cart behavior.">
         <motion.div variants={stagger} initial="hidden" animate="show" className="grid gap-6 lg:grid-cols-3">
           {products.map((product) => <ProductCard key={product.id} product={product} onAdd={onAdd} />)}
+        </motion.div>
+      </PageShell>
+
+      <PageShell
+        eyebrow="PET TREATS"
+        title="宠物冻干专区"
+        description="为猫狗设计的高蛋白冻干零食，可单独售卖，也可以与水果冻干一起打组合礼盒。"
+      >
+        <motion.div variants={stagger} initial="hidden" animate="show" className="grid gap-6 lg:grid-cols-3">
+          {petProducts.map((item) => (
+            <motion.div
+              key={item.id}
+              variants={fadeUp}
+              className="flex flex-col justify-between rounded-[2rem] border border-[#d9cfbf] bg-[#fbf8f2] p-7"
+            >
+              <div>
+                <div className="text-xs tracking-[0.24em] text-[#8d5b2d]">FREEZE-DRIED PET TREATS</div>
+                <div className="mt-3 text-lg font-semibold text-[#2b2218]">{item.title}</div>
+                <div className="mt-1 text-sm text-[#7b6c59]">{item.zh}</div>
+                <div className="mt-3 inline-flex rounded-full border border-[#d9cfbf] bg-[#fffaf2] px-3 py-1 text-xs text-[#6b5b49]">
+                  {item.tag}
+                </div>
+                <p className="mt-4 text-sm leading-7 text-[#6b5b49]">{item.desc}</p>
+              </div>
+              <ul className="mt-4 space-y-2 text-sm text-[#6b5b49]">
+                {item.specs.map((spec) => (
+                  <li key={spec} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#8d5b2d]" />
+                    <span>{spec}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </motion.div>
       </PageShell>
     </>
