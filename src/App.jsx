@@ -58,26 +58,26 @@ const petProducts = [
   {
     id: "pet-chicken-cube",
     title: "Freeze-Dried Chicken Cubes",
-    zh: "宠物冻干鸡肉粒",
-    tag: "高蛋白 · 单一肉源",
-    desc: "精选鸡胸肉低温冻干，还原真实肉香，帮助控制体重同时保留适口性。",
-    specs: ["100% 鸡肉", "不添加谷物、防腐剂", "适合犬猫日常零食"],
+    zh: "High-protein single-ingredient treat",
+    tag: "HIGH PROTEIN · SINGLE MEAT",
+    desc: "Lean chicken breast, gently freeze-dried to lock in real meat aroma and texture for everyday rewarding.",
+    specs: ["100% chicken", "No grains or preservatives", "Suitable for both dogs and cats"],
   },
   {
     id: "pet-salmon-bite",
     title: "Freeze-Dried Salmon Bites",
-    zh: "宠物冻干三文鱼块",
-    tag: "Omega-3 皮毛亮泽",
-    desc: "深海三文鱼整块冻干，富含优质脂肪酸，适合需要皮毛护理的宠物。",
-    specs: ["丰富 Omega-3", "适口性强", "可泡水还原拌粮"],
+    zh: "Omega-3 rich skin & coat support",
+    tag: "OMEGA-3 · SKIN & COAT",
+    desc: "Whole salmon pieces freeze-dried for a crunchy, high-value treat packed with natural fatty acids.",
+    specs: ["Rich in Omega-3", "Great palatability", "Can be rehydrated and mixed with food"],
   },
   {
     id: "pet-mixed-train",
     title: "Training Mix Variety",
-    zh: "宠物训练冻干组合",
-    tag: "训练奖励 · 小颗粒",
-    desc: "鸡肉、鸭肉等多种口味小颗粒组合，方便训练时快速奖励。",
-    specs: ["多种口味组合", "小颗粒设计", "适合作为训练奖励"],
+    zh: "Small cubes for quick rewarding",
+    tag: "TRAINING · SMALL CUBES",
+    desc: "A mix of bite-sized freeze-dried meats designed for fast, repeatable rewards during training sessions.",
+    specs: ["Multi-flavor assortment", "Small cube format", "Ideal as training rewards"],
   },
 ];
 
@@ -281,8 +281,8 @@ function HomePage({ onAdd }) {
 
       <PageShell
         eyebrow="PET TREATS"
-        title="宠物冻干专区"
-        description="为猫狗设计的高蛋白冻干零食，可单独售卖，也可以与水果冻干一起打组合礼盒。"
+        title="Pet Freeze-Dried Treats"
+        description="High-protein freeze-dried treats designed for dogs and cats, ready for direct sale or bundle gifting with fruit snacks."
       >
         <motion.div variants={stagger} initial="hidden" animate="show" className="grid gap-6 lg:grid-cols-3">
           {petProducts.map((item) => (
